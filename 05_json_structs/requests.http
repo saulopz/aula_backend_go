@@ -1,0 +1,28 @@
+@base = http://localhost:8080
+
+### Consultar (espera 200; no início, campos vazios)
+GET {{base}}/user
+
+### Substituir o usuário (espera 200)
+PUT {{base}}/user
+Content-Type: application/json
+
+{
+    "name": "Lain Iwakura",
+    "email": "lain@wired.net"
+}
+
+### JSON malformado (espera 400)
+PUT {{base}}/user
+Content-Type: application/json
+
+{
+    "name": "Lain Iwakura",
+
+### Campo obrigatório faltando (espera 400)
+PUT {{base}}/user
+Content-Type: application/json
+
+{
+    "name": "Lain Iwakura"
+}

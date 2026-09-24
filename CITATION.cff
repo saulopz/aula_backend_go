@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: >-
+  Se você usar este material em aulas, cursos, trabalhos ou publicações,
+  por favor, cite-o conforme os dados abaixo.
+type: software
+title: "Back-end RESTful em Go: exemplos das aulas de Sistemas Distribuídos e Mobile"
+abstract: >-
+  Sequência de exemplos didáticos de serviços web RESTful em Go, do servidor
+  HTTP básico à persistência em PostgreSQL (SQL puro e GORM), padrão DAO e
+  camadas de segurança (autenticação por API KEY, limite de taxa e timeouts).
+authors:
+  - given-names: Saulo Popov
+    family-names: Zambiasi
+license: MIT
+date-released: "2026-09-24"
+url: "https://wiki.arisa.com.br/index.php?title=Sistemas_Distribuídos_e_Mobile"
+keywords:
+  - go
+  - golang
+  - rest
+  - api
+  - postgresql
+  - ensino
+  - sistemas distribuídos

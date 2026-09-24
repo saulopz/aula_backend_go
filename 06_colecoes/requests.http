@@ -1,0 +1,44 @@
+@base = http://localhost:8080
+
+### Listar com a coleção vazia (espera 200 e [])
+GET {{base}}/users
+
+### Criar a primeira usuária (espera 201)
+# @name criarLain
+POST {{base}}/users
+Content-Type: application/json
+
+{
+    "name": "Lain Iwakura",
+    "email": "lain@wired.net"
+}
+
+### Criar outro usuário, tentando escolher o ID (espera 201, com o ID do servidor)
+POST {{base}}/users
+Content-Type: application/json
+
+{
+    "id": 999,
+    "name": "Taro",
+    "email": "taro@wired.net"
+}
+
+### Buscar a usuária criada, usando o ID devolvido pelo servidor (espera 200)
+GET {{base}}/users/{{criarLain.response.body.$.id}}
+
+### Listar todos (espera 200, ordenados por ID)
+GET {{base}}/users
+
+### Buscar um ID que não existe (espera 404)
+GET {{base}}/users/999
+
+### Buscar com um ID que não é número (espera 400)
+GET {{base}}/users/abc
+
+### Criar sem os campos obrigatórios (espera 400)
+POST {{base}}/users
+Content-Type: application/json
+
+{
+    "name": "Sem email"
+}

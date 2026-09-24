@@ -1,0 +1,22 @@
+@base = http://localhost:8080
+
+### Consultar o valor (espera 200)
+GET {{base}}/number
+
+### Alterar para 42 (espera 200)
+PUT {{base}}/number
+Content-Type: text/plain
+
+42
+
+### Valor inválido (espera 400)
+PUT {{base}}/number
+Content-Type: text/plain
+
+abc
+
+### Método não permitido (espera 405)
+PATCH {{base}}/number
+Content-Type: text/plain
+
+7

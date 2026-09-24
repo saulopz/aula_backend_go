@@ -1,0 +1,50 @@
+@base = http://localhost:8080
+# Cole aqui a chave gerada com: go run . nova-chave NOME
+@chave = COLE_SUA_CHAVE_AQUI
+
+
+### Rota pública (espera 200, sem chave)
+GET {{base}}/health
+
+### Sem chave (espera 401)
+GET {{base}}/users
+
+### Sem chave, tentando um item (espera 401)
+GET {{base}}/users/1
+
+### Chave inválida (espera 401)
+GET {{base}}/users
+X-API-KEY: chave-inventada
+
+### Listar com chave (espera 200)
+GET {{base}}/users
+X-API-KEY: {{chave}}
+
+### Criar com chave (espera 201)
+# @name criar
+POST {{base}}/users
+Content-Type: application/json
+X-API-KEY: {{chave}}
+
+{
+    "name": "Lain Iwakura",
+    "email": "lain@wired.net"
+}
+
+### Buscar o criado (espera 200)
+GET {{base}}/users/{{criar.response.body.$.id}}
+X-API-KEY: {{chave}}
+
+### Alterar o criado (espera 200)
+PUT {{base}}/users/{{criar.response.body.$.id}}
+Content-Type: application/json
+X-API-KEY: {{chave}}
+
+{
+    "name": "Lain",
+    "email": "lain@navi.net"
+}
+
+### Excluir o criado (espera 204)
+DELETE {{base}}/users/{{criar.response.body.$.id}}
+X-API-KEY: {{chave}}

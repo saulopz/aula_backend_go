@@ -1,0 +1,44 @@
+# ------------------------------------------------------------------
+# Executáveis gerados pelo "go build"
+# ------------------------------------------------------------------
+# No Linux e no macOS, o executável recebe o nome do módulo e não tem
+# extensão (hello, usersapi...). Como os nomes mudam de pasta para
+# pasta, ignoramos todo arquivo SEM extensão e liberamos o resto:
+*
+!*/
+!*.*
+
+# Exceções: arquivos comuns sem extensão que devem ir para o Git.
+!LICENSE
+!Makefile
+!Dockerfile
+
+# Executáveis do Windows e arquivos gerados por testes e perfis.
+*.exe
+*.test
+*.out
+*.prof
+
+# ------------------------------------------------------------------
+# Segredos: NUNCA vão para o repositório
+# ------------------------------------------------------------------
+# Chaves das aulas de API KEY (crie o arquivo localmente; veja o README).
+apikey.txt
+apikeys.json
+
+# Arquivos de variáveis de ambiente.
+.env
+.env.*
+
+# ------------------------------------------------------------------
+# Editores e sistema operacional
+# ------------------------------------------------------------------
+# Do VSCode/VSCodium, só vão as recomendações de extensões e as
+# configurações do projeto.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+.DS_Store
+Thumbs.db

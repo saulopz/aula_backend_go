@@ -1,0 +1,52 @@
+@base = http://localhost:8080
+
+### Listar (espera 200)
+GET {{base}}/users
+
+### Criar (espera 201)
+# @name criar
+POST {{base}}/users
+Content-Type: application/json
+
+{
+    "name": "Lain Iwakura",
+    "email": "lain@wired.net"
+}
+
+### Buscar o usuário criado (espera 200)
+GET {{base}}/users/{{criar.response.body.$.id}}
+
+### Alterar o usuário criado (espera 200)
+PUT {{base}}/users/{{criar.response.body.$.id}}
+Content-Type: application/json
+
+{
+    "name": "Lain",
+    "email": "lain@navi.net"
+}
+
+### Excluir o usuário criado (espera 204)
+DELETE {{base}}/users/{{criar.response.body.$.id}}
+
+### Excluir de novo o mesmo usuário (espera 404)
+DELETE {{base}}/users/{{criar.response.body.$.id}}
+
+### Alterar um usuário que não existe (espera 404)
+PUT {{base}}/users/999999
+Content-Type: application/json
+
+{
+    "name": "Ninguém",
+    "email": "ninguem@wired.net"
+}
+
+### ID que não é número (espera 400)
+GET {{base}}/users/abc
+
+### Campo obrigatório faltando (espera 400)
+POST {{base}}/users
+Content-Type: application/json
+
+{
+    "name": "Sem email"
+}

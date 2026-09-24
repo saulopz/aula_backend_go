@@ -1,0 +1,12 @@
+@base = http://localhost:8080
+
+### Chave correta (espera 200)
+GET {{base}}/auth
+X-API-KEY: 01234
+
+### Chave errada (espera 401)
+GET {{base}}/auth
+X-API-KEY: errada
+
+### Sem chave (espera 401)
+GET {{base}}/auth

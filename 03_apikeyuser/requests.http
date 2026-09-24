@@ -1,0 +1,25 @@
+@base = http://localhost:8080
+@usuario = user1
+@chave = apikey1
+
+### Usuário e chave corretos (espera 200)
+GET {{base}}/auth
+X-User: {{usuario}}
+X-API-KEY: {{chave}}
+
+### Chave de outro usuário (espera 401)
+GET {{base}}/auth
+X-User: {{usuario}}
+X-API-KEY: apikey2
+
+### Usuário inexistente (espera 401)
+GET {{base}}/auth
+X-User: fantasma
+X-API-KEY: {{chave}}
+
+### Usuário inexistente e sem chave (espera 401)
+GET {{base}}/auth
+X-User: fantasma
+
+### Sem cabeçalho nenhum (espera 401)
+GET {{base}}/auth
