@@ -67,8 +67,10 @@ func main() {
 	if origem == "" {
 		origem = "http://localhost:5173"
 	}
+	// o correto é setar corretamente a origem, algo como
+	// AllowedOrigins: []string{origem},
 	c := cors.New(cors.Options{
-		AllowedOrigins: []string{origem},
+		AllowedOrigins: []string{"*"},
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE"},
 		AllowedHeaders: []string{"Content-Type", "X-API-KEY"},
 	})

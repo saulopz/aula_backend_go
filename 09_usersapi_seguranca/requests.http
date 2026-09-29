@@ -1,6 +1,6 @@
 @base = http://localhost:8080
 # Cole aqui a chave gerada com: go run . nova-chave NOME
-@chave = COLE_SUA_CHAVE_AQUI
+@chave = e6e5580321241499dfcc4f82cf29fdf624eac1f837fbedbb3525e80dbabca68e
 
 
 ### Rota pública (espera 200, sem chave)
