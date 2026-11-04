@@ -1,7 +1,6 @@
 @base = http://localhost:8080
 # Cole aqui a chave gerada com: go run . nova-chave NOME
-@chave = e6e5580321241499dfcc4f82cf29fdf624eac1f837fbedbb3525e80dbabca68e
-
+@chave = 2daacb698bfb7e8b1b5cda2c23f48f12eeab2b5676f5358e3330afb96947717d
 
 ### Rota pública (espera 200, sem chave)
 GET {{base}}/health

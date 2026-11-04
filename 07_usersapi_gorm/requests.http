@@ -1,5 +1,8 @@
 @base = http://localhost:8080
 
+# Execute as requisições NA ORDEM, de cima para baixo:
+# várias delas usam o ID devolvido pela requisição "criar".
+
 ### Listar (espera 200)
 GET {{base}}/users
 
