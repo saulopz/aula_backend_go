@@ -16,8 +16,8 @@ Os exemplos formam uma sequência: cada um parte do anterior e acrescenta um con
 | `04_variaveis` | Manipulando uma variável | `PUT` com corpo, validação, condição de corrida e `sync.Mutex` | não |
 | `05_json_structs` | JSON e Structs | JSON, `struct` com métodos, receptor ponteiro, arquivos separados | não |
 | `06_colecoes` | Coleções, POST e parâmetros no caminho | coleção e item, `POST` com `201`, `{id}` no caminho, `map` | não |
-| `07_usersapi` | Persistência com SQL | PostgreSQL com `database/sql`, padrão DAO, interfaces | sim |
-| `08_usersapi_gorm` | Persistência com GORM | o mesmo serviço com o ORM GORM, trocando só o DAO | sim |
+| `07_usersapi_gorm` | Persistência com GORM | o mesmo serviço com o ORM GORM, trocando só o DAO | sim |
+| `08_usersapi` | Persistência com SQL | PostgreSQL com `database/sql`, padrão DAO, interfaces | sim |
 | `09_usersapi_seguranca` | Segurança na API | middlewares: API KEY com hash no banco, limite de taxa, limites e timeouts | sim |
 
 ## Pré-requisitos
