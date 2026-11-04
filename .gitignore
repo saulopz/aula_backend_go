@@ -28,7 +28,7 @@ apikeys.json
 
 # Arquivos de variáveis de ambiente.
 .env
-.env.*
+# .env.*
 
 # ------------------------------------------------------------------
 # Editores e sistema operacional
